@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_V0L_TpDxEe2_tJQGo34b8Q" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_2Ny9IJDsEe2_tJQGo34b8Q" vocabulary="../../../BillingProcess.ecore#/">
+    <rule/>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="InputAirLiquide.device_type = 'AirSense'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputAirLiquide.device_type = 'AirSense'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.device_type">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputAirLiquide.device_type" rhs="'AirSense'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(details_output.PK_from_input_file = InputAirLiquide.PK)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( details_output.PK_from_input_file = InputAirLiquide.PK ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputAirLiquide.PK">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="details_output.PK_from_input_file">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="details_output.PK_from_input_file = InputAirLiquide.PK" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="details_output.organization_name = InputAirLiquide.organization_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.organization_name = InputAirLiquide.organization_name" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.organization_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.date_of_insertion = now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.date_of_insertion = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="details_output.date_of_insertion">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.country_code = InputAirLiquide.country_code">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.country_code = InputAirLiquide.country_code" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.country_code">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.country_code">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.device_type = InputAirLiquide.device_type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.device_type = InputAirLiquide.device_type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.device_type">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.device_type">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.operation = InputAirLiquide.operation">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.operation = InputAirLiquide.operation" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.operation">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.operation">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.plan_name = InputAirLiquide.plan_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.plan_name = InputAirLiquide.plan_name" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.plan_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.plan_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.serial_number = InputAirLiquide.serial_number">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.serial_number = InputAirLiquide.serial_number" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.serial_number">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.serial_number">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.facturation_line_identification = InputAirLiquide.organization_name+ '_' + 'AirSense'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.facturation_line_identification = InputAirLiquide.organization_name + '_' + 'AirSense'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.facturation_line_identification">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="details_output.bill_to_customer_name = 'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.bill_to_customer_name = 'AIR LIQUIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.bill_to_customer_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="InputBriscoe.Interactive_report=1">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.Interactive_report = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Interactive_report" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputBriscoe.Interactive_report">
+              <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop1_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.2">
+      <opaqueExpression expression="InputBriscoe.Name=InputAirLiquide.organization_name">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.Name = InputAirLiquide.organization_name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+              <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop1_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+              <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+      <text expression="Details Billing air liquide customers with interactive1.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Details Billing air liquide customers with interactive1." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Briscoe_billing_drop1_global" filters="#//@ruleset/@filters.0 #//@ruleset/@filters.1">
+      <alias value="InputBriscoe"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop1_global/Interactive_report"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop1_global/Name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop1_global/Interactive_report"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Cross_table">
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//Billing_details_output_spain" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_details_output_spain" ruleStatements="#//@ruleset/@ruleStatements.0">
+        <alias value="details_output"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/organization_name"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/date_of_insertion"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/country_code"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/device_type"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/operation"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/plan_name"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/serial_number"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/facturation_line_identification"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/PK_from_input_file"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_spain/bill_to_customer_name"/>
+      </extension>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Billing_air_liquide" filters="#//@ruleset/@filters.1">
+      <alias value="InputAirLiquide"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/organization_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/organization_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/device_type"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/serial_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/plan_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/operation"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/country_code"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/PK"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_air_liquide/DATE_OF_TREATMENT"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="31" sashWeightConditionsIf="64">
+    <actionSection rowCount="48" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.organization_name = InputAirLiquide.organization_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.organization_name = InputAirLiquide.organization_name" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.organization_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.date_of_insertion = now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.date_of_insertion = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="details_output.date_of_insertion">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.country_code = InputAirLiquide.country_code">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.country_code = InputAirLiquide.country_code" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.country_code">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.country_code">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.device_type = InputAirLiquide.device_type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.device_type = InputAirLiquide.device_type" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.device_type">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.device_type">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.operation = InputAirLiquide.operation">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.operation = InputAirLiquide.operation" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.operation">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.operation">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.plan_name = InputAirLiquide.plan_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.plan_name = InputAirLiquide.plan_name" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.plan_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.plan_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.serial_number = InputAirLiquide.serial_number">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.serial_number = InputAirLiquide.serial_number" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.serial_number">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.serial_number">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="55">
+        <valueSetCell/>
+        <expressionCell external="details_output.facturation_line_identification = InputAirLiquide.organization_name+ '_' + cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.facturation_line_identification = InputAirLiquide.organization_name + '_' + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.facturation_line_identification">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.facturation_line_identification">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.bill_to_customer_name = 'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.bill_to_customer_name = 'AIR LIQUIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.bill_to_customer_name">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputBriscoe.Interactive_report=1" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputBriscoe.Name=InputAirLiquide.organization_name" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.7"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.8"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.9"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputBriscoe.Name=InputAirLiquide.organization_name" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.8"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="InputBriscoe.Interactive_report=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.Interactive_report = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Interactive_report" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputBriscoe.Interactive_report">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop1_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="InputBriscoe.Name=InputAirLiquide.organization_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.Name = InputAirLiquide.organization_name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop1_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="112" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Details Billing air liquide customers with interactive1.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Details Billing air liquide customers with interactive1." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="InputAirLiquide.device_type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputAirLiquide.device_type" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.device_type">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="details_output.PK_from_input_file = InputAirLiquide.PK">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.PK_from_input_file = InputAirLiquide.PK" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputAirLiquide.PK">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="details_output.PK_from_input_file">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'AirSense'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputAirLiquide.device_type = 'AirSense'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.device_type">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( details_output.PK_from_input_file = InputAirLiquide.PK ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputAirLiquide.PK">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="details_output.PK_from_input_file">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="'AirSense'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="details_output.facturation_line_identification = InputAirLiquide.organization_name + '_' + 'AirSense'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="details_output.facturation_line_identification">
+                <parentTerm text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="InputAirLiquide.organization_name">
+                <parentTerm text="InputAirLiquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="InputAirLiquide"/>
+              </terms>
+              <terms text="details_output" datatype="Billing_details_output_spain" termtype="ENTITY" fulltext="details_output">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

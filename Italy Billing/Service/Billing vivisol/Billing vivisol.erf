@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_hIYZ4JD9Ee2_tJQGo34b8Q" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="Details%20facturation%20ventil%20sleep.ers#/">
+  <comments timestamp="2022-11-29T18:14:08.786+0100" username="msquinta" text="For Italian customers, get Vivisol group data in the Billing_General&#xD;&#xA;Ref.#6 Doc Italy" objects="#//@ruleflowViewList.0/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-11-29T18:18:17.317+0100" username="msquinta" text="AirLiquide Vivisol Expert billing rules&#xD;&#xA;Ref.#6 Doc Italy" objects="#//@ruleflowViewList.0/@flowShapeList.1" type="Note"/>
+  <comments timestamp="2022-11-29T18:17:36.202+0100" username="msquinta" text="AirLiquide Vivisol in Ventil and Sleep billing rules&#xD;&#xA;Ref.#6 Doc Italy" objects="#//@ruleflowViewList.0/@flowShapeList.2" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_wmIaMIt_Ee2NpNuaSXn0Rg" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get Data Vivisol Italy" order="1" ruleActivityUpdateStamp="_PmrFoIt2Ee2NpNuaSXn0Rg" nextStep="#//@ruleflow/@flowControlList.2" invokes="#//@ruleflow/@connectorList.0"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Customer Vivisol Expert" order="4" ruleActivityUpdateStamp="_eVZNwIt_Ee2NpNuaSXn0Rg" nextStep="#//@ruleflow/@flowControlList.3" invokes="Sum%20of%20rows%20customers%20expert.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Customer Vivisol in Ventil and Sleep" order="2" ruleActivityUpdateStamp="_SZifwIt_Ee2NpNuaSXn0Rg" nextStep="#//@ruleflow/@flowControlList.5" invokes="Sum%20of%20rows%20customers%20sleep%20and%20ventil.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Quantity Of Ventil And Expert" order="5" ruleActivityUpdateStamp="_gPOdMIt_Ee2NpNuaSXn0Rg" nextStep="#//@ruleflow/@flowControlList.4" invokes="Calculated%20quantity%20of%20ventil%20and%20expert.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Update Quantity Ventil" order="6" ruleActivityUpdateStamp="_0LNZkIt2Ee2NpNuaSXn0Rg" invokes="Update%20quantity%20ventil.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Add details facturation ventil sleep" order="3" ruleActivityUpdateStamp="_W0TlcIuAEe2NpNuaSXn0Rg" nextStep="#//@ruleflow/@flowControlList.1" invokes="Details%20facturation%20ventil%20sleep.ers#//@ruleset"/>
+    <connectorList className="CorticonADC" serviceName="read">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Input Vivisol Italy"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="21" y="21" width="376" height="46" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="282" width="372" height="50" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="108" width="372" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="372" width="369" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="468" width="370" height="49" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.4">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="198" width="373" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.5"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.4"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.5" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

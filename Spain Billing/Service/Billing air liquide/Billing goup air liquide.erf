@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_RQVqgZD6Ee2_tJQGo34b8Q" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="Sum%20of%20rows%20customers%20airliquide%20interactive1.ers#/ Sum%20of%20rows%20customers%20airliquide%20interactive0.ers#/ Create%20lines%20billing%20for%20customers%20briscoe.ers#/ Details%20billing%20interactive1.ers#/ Details%20biliing%20interactive0.ers#/">
+  <comments timestamp="2022-11-29T19:30:17.826+0100" username="msquinta" text="AirLiquide interactive billing rules (part 1)&#xD;&#xA;Ref.#8 Spain" objects="#//@ruleflowViewList.0/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-11-29T19:30:26.911+0100" username="msquinta" text="AirLiquide interactive billing rules (part 2)&#xD;&#xA;Ref.#8 Spain" objects="#//@ruleflowViewList.0/@flowShapeList.1" type="Note"/>
+  <comments timestamp="2022-11-29T19:29:53.491+0100" username="msquinta" text="AirLiquide billing rules in Briscoe&#xD;&#xA;Ref.#8 Spain" objects="#//@ruleflowViewList.0/@flowShapeList.2" type="Note"/>
+  <comments timestamp="2022-11-29T19:29:26.374+0100" username="msquinta" text="For Spanish customers, get AirLiquide group data in the Billing_General&#xD;&#xA;Ref.#8 Doc Spain" objects="#//@ruleflowViewList.0/@flowShapeList.3" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_2Ny9IJDsEe2_tJQGo34b8Q" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Air Liquide Interactive1" order="3" ruleActivityUpdateStamp="_NEx_IpDxEe2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.4" invokes="Sum%20of%20rows%20customers%20airliquide%20interactive1.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Air Liquide Interactive0" order="5" ruleActivityUpdateStamp="_Wq5vZZDyEe2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.5" invokes="Sum%20of%20rows%20customers%20airliquide%20interactive0.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Air Liquide Briscoe" order="2" ruleActivityUpdateStamp="_q1l4UpD4Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.0" invokes="Create%20lines%20billing%20for%20customers%20briscoe.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get Data Air Liquide Spain" order="1" ruleActivityUpdateStamp="_RQL5hZD6Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.2" invokes="#//@ruleflow/@connectorList.0"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Details Billing Interactive1" order="4" ruleActivityUpdateStamp="_V0L_TpDxEe2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.1" invokes="Details%20billing%20interactive1.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Details Biliing Interactive0" order="6" ruleActivityUpdateStamp="_NLhq4pDyEe2_tJQGo34b8Q" invokes="Details%20biliing%20interactive0.ers#//@ruleset"/>
+    <connectorList className="CorticonADC" serviceName="read">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Briscoe Air Liquide Spain"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="4" y="212" width="334" height="57" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="6" y="396" width="331" height="60" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="4" y="121" width="334" height="57" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="6" y="30" width="331" height="57" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="5" y="306" width="332" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.4">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="6" y="492" width="331" height="55" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.4"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.5"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.4" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

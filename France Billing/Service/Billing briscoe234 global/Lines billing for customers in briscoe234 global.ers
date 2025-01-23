@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_s_vK8EpHEe22IPlThtXhLQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_RNKKwE77Ee2EhvIQJmywfQ" vocabulary="../../../BillingProcess.ecore#/">
+    <rule>
+      <condition/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0"/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(InputBriscoe.Name=InputCross.Organization_Name)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( InputBriscoe.Name = InputCross.Organization_Name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Organization_Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Organization_Name">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputBriscoe.Name=InputCross.Organization_Name" rhs="T"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="billing_global_output_france.new[&#xD;&#xA;quantity                                                                 =InputBriscoe.MBE_Patients_assigned_with_actives_rules,&#xD;&#xA;item                                                                       ='AVVENTEXP01', &#xD;&#xA;bill_to_account                                                     =InputCross.Account_number, &#xD;&#xA;ship_to_account                                                    =InputCross.Account_number, &#xD;&#xA;bill_to_customer_name                                         =InputCross.Organization_Name, &#xD;&#xA;bill_to_site_number                                               =InputCross.Bill_to_Site, &#xD;&#xA;ship_to_site_number                                             =InputCross.Ship_to_Site&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="billing_global_output_france.new [ billing_global_output_france.ship_to_site_number = InputCross.Ship_to_Site , billing_global_output_france.ship_to_account = InputCross.Account_number , billing_global_output_france.quantity = InputBriscoe.MBE_Patients_assigned_with_actives_rules , billing_global_output_france.item = 'AVVENTEXP01' , billing_global_output_france.bill_to_site_number = InputCross.Bill_to_Site , billing_global_output_france.bill_to_customer_name = InputCross.Organization_Name , billing_global_output_france.bill_to_account = InputCross.Account_number ]" datatype="billing_global_output_france" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bill_to_site_number" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_site_number">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="ship_to_site_number" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.ship_to_site_number">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_customer_name">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_account">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.item">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="ship_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.ship_to_account">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="billing_global_output_france.quantity">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Ship_to_Site" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Ship_to_Site">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Account_number" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Account_number">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Organization_Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Organization_Name">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="billing_global_output_france" termtype="NEW" fulltext="billing_global_output_france.new">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="MBE_Patients_assigned_with_actives_rules" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputBriscoe.MBE_Patients_assigned_with_actives_rules">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Bill_to_Site" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Bill_to_Site">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.1">
+      <opaqueExpression expression="InputCross.Not_in_general=false">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCross.Not_in_general = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Not_in_general" datatype="Boolean" termtype="ATTRIBUTE" fulltext="InputCross.Not_in_general">
+              <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0 #//@ruleset/@rules.1/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.2">
+      <text expression="Air liquide group, billing lines for customers in Briscooe drop234 global.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Air liquide group, billing lines for customers in Briscooe drop234 global." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global">
+      <alias value="InputBriscoe"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/Name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/MBE_Patients_assigned_with_actives_rules"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/Org_id"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/PK"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/Country"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Briscoe_billing_drop234_global/DATE_OF_TREATMENT"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Cross_table" filters="#//@ruleset/@filters.0">
+      <alias value="InputCross"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Not_in_general"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Organization_Name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Ship_to_Site"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Account_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/DATE_OF_INSERTION"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Bill_to_Site"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//billing_global_output_france" ruleStatements="#//@ruleset/@ruleStatements.0">
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/bill_to_site_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/additional_desc"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/ship_to_site_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/bill_to_customer_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/bill_to_account"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/operating_unit"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/item"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/ship_to_account"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/quantity"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_france/date_of_insertion"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="36" sashWeightConditionsActions="46" sashWeightConditionsIf="73">
+    <actionSection rowCount="48" columnWidthFactor="0.5">
+      <actionItemList rowHeight="37">
+        <valueSetCell/>
+        <expressionCell external="billing_global_output_france.new[&#xD;&#xA;quantity                                                                 =InputBriscoe.MBE_Patients_assigned_with_actives_rules,&#xD;&#xA;item                                                                       ='AVVENTEXP01', &#xD;&#xA;bill_to_account                                                     =InputCross.Account_number, &#xD;&#xA;ship_to_account                                                    =InputCross.Account_number, &#xD;&#xA;bill_to_customer_name                                         =InputCross.Organization_Name, &#xD;&#xA;bill_to_site_number                                               =InputCross.Bill_to_Site, &#xD;&#xA;ship_to_site_number                                             =InputCross.Ship_to_Site&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="billing_global_output_france.new [ billing_global_output_france.ship_to_site_number = InputCross.Ship_to_Site , billing_global_output_france.ship_to_account = InputCross.Account_number , billing_global_output_france.quantity = InputBriscoe.MBE_Patients_assigned_with_actives_rules , billing_global_output_france.item = 'AVVENTEXP01' , billing_global_output_france.bill_to_site_number = InputCross.Bill_to_Site , billing_global_output_france.bill_to_customer_name = InputCross.Organization_Name , billing_global_output_france.bill_to_account = InputCross.Account_number ]" datatype="billing_global_output_france" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="bill_to_site_number" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_site_number">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="ship_to_site_number" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.ship_to_site_number">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_customer_name">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.bill_to_account">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.item">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="ship_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="billing_global_output_france.ship_to_account">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="billing_global_output_france.quantity">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Ship_to_Site" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Ship_to_Site">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Account_number" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Account_number">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Organization_Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Organization_Name">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="new" datatype="billing_global_output_france" termtype="NEW" fulltext="billing_global_output_france.new">
+                <parentTerm text="billing_global_output_france" datatype="billing_global_output_france" termtype="ENTITY" fulltext="billing_global_output_france" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="MBE_Patients_assigned_with_actives_rules" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputBriscoe.MBE_Patients_assigned_with_actives_rules">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Bill_to_Site" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Bill_to_Site">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputCross.Not_in_general=false" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.5"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.9"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="InputCross.Not_in_general=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCross.Not_in_general = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Not_in_general" datatype="Boolean" termtype="ATTRIBUTE" fulltext="InputCross.Not_in_general">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="49" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="247" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="Air liquide group, billing lines for customers in Briscooe drop234 global.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Air liquide group, billing lines for customers in Briscooe drop234 global." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList rowHeight="36">
+        <valueSetCell/>
+        <expressionCell external="InputBriscoe.Name=InputCross.Organization_Name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.Name = InputCross.Organization_Name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Organization_Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Organization_Name">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( InputBriscoe.Name = InputCross.Organization_Name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Organization_Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputCross.Organization_Name">
+                <parentTerm text="InputCross" datatype="Cross_table" termtype="ENTITY" fulltext="InputCross" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_global" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

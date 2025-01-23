@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_L0TeUGQFEe2A1IbIBqhklw" externalChecksum="2722078124:1438690353:494732188" studioType="Java" ruleflowAssets="Expert/process%20update%20treatment%20air%20liquide%20expert.erf#/ Payperview/process%20update%20treatment%20air%20lquide%20payperview.erf#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_LGP68WQEEe2A1IbIBqhklw" vocabulary="../../../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Air Liquide Expert" order="1" ruleActivityUpdateStamp="_zywOAWP9Ee2A1IbIBqhklw" nextStep="#//@ruleflow/@flowControlList.1" invokes="Expert/process%20update%20treatment%20air%20liquide%20expert.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Air Lquide Payperview" order="2" ruleActivityUpdateStamp="_G9e9gmP-Ee2A1IbIBqhklw" invokes="Payperview/process%20update%20treatment%20air%20lquide%20payperview.erf#//@ruleflow"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="217" y="70" width="211" height="50" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="217" y="168" width="211" height="50" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

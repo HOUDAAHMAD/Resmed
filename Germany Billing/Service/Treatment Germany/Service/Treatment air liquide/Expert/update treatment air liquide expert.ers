@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_08agkmQEEe2A1IbIBqhklw" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_LGP68WQEEe2A1IbIBqhklw" vocabulary="../../../../../../BillingProcess.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(OutputGermany.bill_to_customer_name=InputBriscoe.Name)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputGermany.bill_to_customer_name = InputBriscoe.Name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputGermany.bill_to_customer_name=InputBriscoe.Name" rhs="T"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="InputBriscoe.DATE_OF_TREATMENT=now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.DATE_OF_TREATMENT = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="DATE_OF_TREATMENT" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputBriscoe.DATE_OF_TREATMENT">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.1">
+      <text expression="Update column date of treatment.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update column date of treatment." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../../../../BillingProcess.ecore#//billing_global_output_germany">
+      <alias value="OutputGermany"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//billing_global_output_germany/item"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//billing_global_output_germany/bill_to_customer_name"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//billing_global_output_germany/quantity"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details" ruleStatements="#//@ruleset/@ruleStatements.0">
+      <alias value="InputBriscoe"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details/Name"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details/Org_id"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details/PK"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details/Serial_number"/>
+      <referencedAttributes attribute="../../../../../../BillingProcess.ecore#//Briscoe_billing_drop234_details/DATE_OF_TREATMENT"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="55">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="InputBriscoe.DATE_OF_TREATMENT=now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputBriscoe.DATE_OF_TREATMENT = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="DATE_OF_TREATMENT" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputBriscoe.DATE_OF_TREATMENT">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="Update column date of treatment.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update column date of treatment." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputGermany.bill_to_customer_name=InputBriscoe.Name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputGermany.bill_to_customer_name = InputBriscoe.Name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputGermany.bill_to_customer_name = InputBriscoe.Name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="InputBriscoe.Name">
+                <parentTerm text="InputBriscoe" datatype="Briscoe_billing_drop234_details" termtype="ENTITY" fulltext="InputBriscoe" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

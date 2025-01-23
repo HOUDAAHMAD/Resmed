@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_eXIDkDskEe29yOOj1grdrg" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="Lines%20billing%20for%20customers%20in%20briscoe234%20global.ers#/">
+  <comments timestamp="2022-09-21T09:50:30.404+0200" username="ahmad.houda" text="Billing rule for customers who are under the air liquide group in the Briscoe Drop234 Global table." objects="#//@ruleflowViewList.0/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-09-21T09:53:52.761+0200" username="ahmad.houda" text="Get data from customers who are under the liquid air group and who are in the Briscoe Drop234 Global table." objects="#//@ruleflowViewList.0/@flowShapeList.1" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_RNKKwE77Ee2EhvIQJmywfQ" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Air Liquide In Briscoe" order="2" ruleActivityUpdateStamp="_s_vK8EpHEe22IPlThtXhLQ" invokes="Lines%20billing%20for%20customers%20in%20briscoe234%20global.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get Data Air Liquide Briscoe" order="1" ruleActivityUpdateStamp="_iSd2sTmCEe2JMIYW0L1pqw" nextStep="#//@ruleflow/@flowControlList.0" invokes="#//@ruleflow/@connectorList.0"/>
+    <connectorList className="CorticonADC" serviceName="read">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Input Briscoe234 Global"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="7" y="148" width="316" height="52" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="6" y="56" width="317" height="52" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

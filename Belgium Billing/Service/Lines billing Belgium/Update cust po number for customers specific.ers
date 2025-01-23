@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="__OWXEYa5Ee2neobssqIS_w" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_0N-Z4Ya5Ee2neobssqIS_w" vocabulary="../../../BillingProcess.ecore#/">
+    <rule/>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="global_output.cust_po_number = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputBelgium.cust_po_number" rhs="null"/>
+      </condition>
+      <action disabled="true">
+        <opaqueExpression expression="global_output.cust_po_number = 'AirView Connectivity'.concat(' ').concat(now.month.toString()).concat(',  ').concat(now.year.toString())">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = 'AirView Connectivity'.concat ( ' ' ).concat ( now.month.toString ).concat ( ',  ' ).concat ( now.year.toString )" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="global_output.cust_po_number='AirView Connectivity'.concat(' ') + now.addMonths(0).month.toString()+', '+ now.addYears(0).year.toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = 'AirView Connectivity'.concat ( ' ' ) + now.addMonths ( 0 ).month.toString + ', ' + now.addYears ( 0 ).year.toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="Update column cust_po_number in output.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update column cust_po_number in output." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Cross_table">
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//billing_global_output_belgium" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_global_output_belgium" ruleStatements="#//@ruleset/@ruleStatements.0">
+        <alias value="global_output"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_belgium/cust_po_number"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="21" sashWeightConditionsIf="47">
+    <actionSection rowCount="49" columnWidthFactor="0.8599221789883269">
+      <actionItemList disabled="true" rowHeight="77">
+        <valueSetCell/>
+        <expressionCell external="global_output.cust_po_number">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="80">
+        <valueSetCell/>
+        <expressionCell external="global_output.cust_po_number='AirView Connectivity'.concat(' ') + now.addMonths(0).month.toString()+', '+ cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = 'AirView Connectivity'.concat ( ' ' ) + now.addMonths ( 0 ).month.toString + ', ' + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="195" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Update column cust_po_number in output.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update column cust_po_number in output." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="49" columnWidthFactor="0.8551724137931035">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="global_output.cust_po_number">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="18">
+      <ruleColumnList ruleId="0" columnWidth="7" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1.1" columnWidth="872" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'AirView Connectivity'.concat(' ').concat(now.month.toString()).concat(',  ').concat(now.year.toString())">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = 'AirView Connectivity'.concat ( ' ' ).concat ( now.month.toString ).concat ( ',  ' ).concat ( now.year.toString )" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="now.addYears(0).year.toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.cust_po_number = 'AirView Connectivity'.concat ( ' ' ) + now.addMonths ( 0 ).month.toString + ', ' + now.addYears ( 0 ).year.toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="cust_po_number" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.cust_po_number">
+                <parentTerm text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_belgium" termtype="ENTITY" fulltext="global_output">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

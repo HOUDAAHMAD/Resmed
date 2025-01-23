@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_qluS8DsaEe29yOOj1grdrg" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="Sum%20of%20rows%20for%20aliseo%20asten%20est.ers#/">
+  <comments timestamp="2022-09-21T10:25:01.603+0200" username="ahmad.houda" text="Billing rule for the Aliseo and asten-est customers." objects="#//@ruleflowViewList.0/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-09-21T10:26:24.347+0200" username="ahmad.houda" text="Get the aliseo and asten-est customers data from the Billing_General table." objects="#//@ruleflowViewList.0/@flowShapeList.1" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_KX74MEpBEe22IPlThtXhLQ" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing Aliseo and Asten Customers " order="2" ruleActivityUpdateStamp="_gbUMoEo9Ee22IPlThtXhLQ" invokes="Sum%20of%20rows%20for%20aliseo%20asten%20est.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Get Data Aliseo Asten" order="1" ruleActivityUpdateStamp="_FGRQATmHEe2JMIYW0L1pqw" nextStep="#//@ruleflow/@flowControlList.0" invokes="#//@ruleflow/@connectorList.0"/>
+    <connectorList className="CorticonADC" serviceName="read">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Input General"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="35" y="196" width="323" height="50" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="84" width="315" height="53" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

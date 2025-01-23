@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore">
+  <com.corticon.rulesemf.assetmodel:RulesheetAsset majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_GFalgD89Ee2LC_hvcGODyQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+    <languageCode>fr_FR</languageCode>
+    <ruleset vocabularyUpdateStamp="_QpAhED8yEe2LC_hvcGODyQ" vocabulary="../../../BillingProcess.ecore#/">
+      <rule documentingRuleStatements="#/0/@ruleset/@ruleStatements.0">
+        <action>
+          <opaqueExpression expression="Billing_messages_output.new[date_of_insertion=now, &#xD;&#xA;country_code=InputNotPresentCross.COUNTRY_CODE, &#xD;&#xA;messages='Caution the client, '.concat(InputNotPresentCross.ORGANIZATION_NAME).concat(', is missing in the Cross table.')]">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_messages_output.new [ Billing_messages_output.messages = 'Caution the client, '.concat ( InputNotPresentCross.ORGANIZATION_NAME ).concat ( ', is missing in the Cross table.' ) , Billing_messages_output.date_of_insertion = now , Billing_messages_output.country_code = InputNotPresentCross.COUNTRY_CODE ]" datatype="Billing_messages_output" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+              <modifiedTermList>
+                <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_messages_output.date_of_insertion">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.messages">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.country_code">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+              </modifiedTermList>
+              <referencedTermList>
+                <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.ORGANIZATION_NAME">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+                <terms text="new" datatype="Billing_messages_output" termtype="NEW" fulltext="Billing_messages_output.new">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="COUNTRY_CODE" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.COUNTRY_CODE">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </opaqueExpression>
+        </action>
+      </rule>
+      <filter precondition="true" logicalVariables="#/0/@ruleset/@logicalVariables.1">
+        <opaqueExpression expression="InputNotPresentCross->isEmpty=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputNotPresentCross->isEmpty = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="InputNotPresentCross" datatype="Boolean" termtype="COLLECTION" fulltext="InputNotPresentCross->isEmpty">
+                <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </filter>
+      <ruleStatement post="Violation" ruleModelElements="#/0/@ruleset/@rules.0" logicalVariable="#/0/@ruleset/@logicalVariables.0">
+        <text expression="Attention the customer {InputNotPresentCross.ORGANIZATION_NAME}, is missing in the Cross table.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Attention the customer  + InputNotPresentCross.ORGANIZATION_NAME + , is missing in the Cross table." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.ORGANIZATION_NAME">
+                <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatement>
+      <logicalVariable entity="../../../BillingProcess.ecore#//Billing_messages_output" ruleStatements="#/0/@ruleset/@ruleStatements.0">
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_messages_output/date_of_insertion"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_messages_output/messages"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_messages_output/country_code"/>
+      </logicalVariable>
+      <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Customer_Not_In_Cross_Table" filters="#/0/@ruleset/@filters.0">
+        <alias value="InputNotPresentCross"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Customer_Not_In_Cross_Table/ORGANIZATION_NAME"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Customer_Not_In_Cross_Table/COUNTRY_CODE"/>
+      </logicalVariable>
+    </ruleset>
+    <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="34" sashWeightConditionsIf="79">
+      <actionSection rowCount="50" columnWidthFactor="0.9495798319327731">
+        <actionItemList rowHeight="176">
+          <valueSetCell valueSet=""/>
+          <expressionCell external="Billing_messages_output.new[date_of_insertion=now, &#xD;&#xA;country_code=InputNotPresentCross.COUNTRY_CODE, &#xD;&#xA;messages='Caution the client, '.concat(InputNotPresentCross.ORGANIZATION_NAME).concat(', is missing in the Cross table.')]">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_messages_output.new [ Billing_messages_output.messages = 'Caution the client, '.concat ( InputNotPresentCross.ORGANIZATION_NAME ).concat ( ', is missing in the Cross table.' ) , Billing_messages_output.date_of_insertion = now , Billing_messages_output.country_code = InputNotPresentCross.COUNTRY_CODE ]" datatype="Billing_messages_output" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+              <modifiedTermList>
+                <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_messages_output.date_of_insertion">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.messages">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.country_code">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+              </modifiedTermList>
+              <referencedTermList>
+                <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.ORGANIZATION_NAME">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+                <terms text="new" datatype="Billing_messages_output" termtype="NEW" fulltext="Billing_messages_output.new">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="COUNTRY_CODE" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.COUNTRY_CODE">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </expressionCell>
+        </actionItemList>
+      </actionSection>
+      <scopeSection>
+        <rootNode>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#/0/@ruleset/@logicalVariables.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#/0/@ruleset/@logicalVariables.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputNotPresentCross->isEmpty=false" filter="#/0/@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          </children>
+        </rootNode>
+      </scopeSection>
+      <filterSection rowCount="50">
+        <filterItemList filter="#/0/@ruleset/@filters.0">
+          <expressionCell external="InputNotPresentCross->isEmpty=false">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputNotPresentCross->isEmpty = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+              <referencedTermList>
+                <terms text="InputNotPresentCross" datatype="Boolean" termtype="COLLECTION" fulltext="InputNotPresentCross->isEmpty">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </expressionCell>
+        </filterItemList>
+      </filterSection>
+      <ruleStatementSection rowCount="49" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="160" columnWidthID="50" columnWidthText="893" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+        <ruleStatementItemList ruleStatement="#/0/@ruleset/@ruleStatements.0">
+          <reference external="0"/>
+          <text external="Attention the customer {InputNotPresentCross.ORGANIZATION_NAME}, is missing in the Cross table.">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Attention the customer  + InputNotPresentCross.ORGANIZATION_NAME + , is missing in the Cross table." expressiontype="BRSTATEMENT">
+              <referencedTermList>
+                <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputNotPresentCross.ORGANIZATION_NAME">
+                  <parentTerm text="InputNotPresentCross" datatype="Customer_Not_In_Cross_Table" termtype="ENTITY" fulltext="InputNotPresentCross" variable="#/0/@ruleset/@logicalVariables.1"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </text>
+        </ruleStatementItemList>
+      </ruleStatementSection>
+      <conditionSection rowCount="46" columnWidthFactor="0.5"/>
+      <ruleSection columnCount="20">
+        <ruleColumnList ruleId="0" columnWidth="100" pRule="#/0/@ruleset/@rules.0">
+          <actionValueSetCellList valueSet="X"/>
+        </ruleColumnList>
+      </ruleSection>
+    </rulesheetViewList>
+  </com.corticon.rulesemf.assetmodel:RulesheetAsset>
+  <com.corticon.rulesemf.assetmodel:RulesheetAsset majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_RKWAEAHHEe28TpCG1xTdKw" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+    <languageCode>fr_FR</languageCode>
+    <ruleset vocabularyUpdateStamp="_xIkFoAHGEe28TpCG1xTdKw" vocabulary="../../../BillingProcess.ecore#/">
+      <rule>
+        <action>
+          <opaqueExpression expression="Billing_messages_output.new[date_of_insertion=now, messages='Attention for the customer='.concat(input.ORGANIZATION_NAME).concat(' does not exist in the Cross table and it was not billing.')]">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_messages_output.new [ Billing_messages_output.messages = 'Attention for the customer='.concat ( input.ORGANIZATION_NAME ).concat ( ' does not exist in the Cross table and it was not billing.' ) , Billing_messages_output.date_of_insertion = now ]" datatype="Billing_messages_output" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+              <modifiedTermList>
+                <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_messages_output.date_of_insertion">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.messages">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+              </modifiedTermList>
+              <referencedTermList>
+                <terms text="new" datatype="Billing_messages_output" termtype="NEW" fulltext="Billing_messages_output.new">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="input.ORGANIZATION_NAME">
+                  <parentTerm text="input" datatype="View_Organization_Not_In_Cross_Table" termtype="ENTITY" fulltext="input"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </opaqueExpression>
+        </action>
+      </rule>
+      <logicalVariable entity="../../../BillingProcess.ecore#//Billing_messages_output">
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_messages_output/date_of_insertion"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_messages_output/messages"/>
+      </logicalVariable>
+      <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//View_Organization_Not_In_Cross_Table">
+        <alias value="input"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//View_Organization_Not_In_Cross_Table/ORGANIZATION_NAME"/>
+      </logicalVariable>
+    </ruleset>
+    <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="24" sashWeightConditionsIf="65">
+      <actionSection rowCount="50" columnWidthFactor="0.9495798319327731">
+        <actionItemList rowHeight="176">
+          <valueSetCell valueSet=""/>
+          <expressionCell external="Billing_messages_output.new[date_of_insertion=now, messages='Attention for the customer='.concat(input.ORGANIZATION_NAME).concat(' does not exist in the Cross table and it was not billing.')]">
+            <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_messages_output.new [ Billing_messages_output.messages = 'Attention for the customer='.concat ( input.ORGANIZATION_NAME ).concat ( ' does not exist in the Cross table and it was not billing.' ) , Billing_messages_output.date_of_insertion = now ]" datatype="Billing_messages_output" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+              <modifiedTermList>
+                <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_messages_output.date_of_insertion">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_messages_output.messages">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+              </modifiedTermList>
+              <referencedTermList>
+                <terms text="new" datatype="Billing_messages_output" termtype="NEW" fulltext="Billing_messages_output.new">
+                  <parentTerm text="Billing_messages_output" datatype="Billing_messages_output" termtype="ENTITY" fulltext="Billing_messages_output" variable="#/0/@ruleset/@logicalVariables.0"/>
+                </terms>
+                <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="input.ORGANIZATION_NAME">
+                  <parentTerm text="input" datatype="View_Organization_Not_In_Cross_Table" termtype="ENTITY" fulltext="input"/>
+                </terms>
+              </referencedTermList>
+            </parserOutput>
+          </expressionCell>
+        </actionItemList>
+      </actionSection>
+      <scopeSection>
+        <rootNode>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#/0/@ruleset/@logicalVariables.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#/0/@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute"/>
+          </children>
+        </rootNode>
+      </scopeSection>
+      <filterSection rowCount="50"/>
+      <ruleStatementSection rowCount="49" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+      <conditionSection rowCount="46" columnWidthFactor="0.5"/>
+      <ruleSection columnCount="20">
+        <ruleColumnList ruleId="0" columnWidth="100" pRule="#/0/@ruleset/@rules.0">
+          <actionValueSetCellList valueSet="X"/>
+        </ruleColumnList>
+      </ruleSection>
+    </rulesheetViewList>
+  </com.corticon.rulesemf.assetmodel:RulesheetAsset>
+</xmi:XMI>

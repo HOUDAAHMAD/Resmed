@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_uugnd5D0Ee2_tJQGo34b8Q" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="Update%20po%20number.ers#/ Update%20bill%20and%20ship%20to%20site%20number.ers#/ Convert%20month%20additional%20to%20string.ers#/ Convert%20month%20cust%20po%20number%20to%20string.ers#/ Remove%20empty%20quantity.ers#/ Update%20bill%20to%20customer%20name%20for%20air%20liquide.ers#/ Insert%20value%20columns%20fixed.ers#/">
+  <comments timestamp="2022-11-29T18:54:44.752+0100" username="msquinta" text="Technical Rules for updating billing lines&#xD;&#xA;- Remove empty qty&#xD;&#xA;- Update additional, date and operating&#xD;&#xA;- Update PO number&#xD;&#xA;- Update bill and ship to site number&#xD;&#xA;- Update customer PO number&#xD;&#xA;- Convert month additional to string&#xD;&#xA;- Convert month customer PO number to string" objects="#/" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_2Ny9IJDsEe2_tJQGo34b8Q" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Update PO number" order="3" ruleActivityUpdateStamp="_SlzQUpD0Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.1" invokes="Update%20po%20number.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Update ship &amp; bill to site number" order="4" ruleActivityUpdateStamp="_Vo1jgpD0Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.2" invokes="Update%20bill%20and%20ship%20to%20site%20number.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Months in string for additional_desc" order="5" ruleActivityUpdateStamp="_cpIWcpD0Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.3" invokes="Convert%20month%20additional%20to%20string.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Months in string for cust PO number " order="6" ruleActivityUpdateStamp="_lUY2YJD0Ee2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.5" invokes="Convert%20month%20cust%20po%20number%20to%20string.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Remove empty quantity lines" order="1" ruleActivityUpdateStamp="_stj41ZDzEe2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.6" invokes="Remove%20empty%20quantity.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Update name air liquide" order="7" ruleActivityUpdateStamp="_oVGOUpD0Ee2_tJQGo34b8Q" invokes="Update%20bill%20to%20customer%20name%20for%20air%20liquide.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Insert value columns fixed" order="2" ruleActivityUpdateStamp="_CZHbwJDzEe2_tJQGo34b8Q" nextStep="#//@ruleflow/@flowControlList.0" invokes="Insert%20value%20columns%20fixed.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="168" width="325" height="54" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="258" width="325" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="348" width="325" height="56" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="438" width="328" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="6" width="325" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.4">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="522" width="328" height="49" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="36" y="84" width="325" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.6">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.5"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.4" targetShape="#//@ruleflowViewList.0/@flowShapeList.6"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.6" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

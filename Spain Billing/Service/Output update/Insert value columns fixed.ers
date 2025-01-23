@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_CZHbwJDzEe2_tJQGo34b8Q" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_2Ny9IJDsEe2_tJQGo34b8Q" vocabulary="../../../BillingProcess.ecore#/">
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <action>
+        <opaqueExpression expression="OutputSpain.additional_desc = 'AirView Billing ' + now.addMonths(0).month.toString() + now.addYears(0).year.toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.additional_desc = 'AirView Billing ' + now.addMonths ( 0 ).month.toString + now.addYears ( 0 ).year.toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="additional_desc" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.additional_desc">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="OutputSpain.date_of_insertion = now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.date_of_insertion = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="OutputSpain.date_of_insertion">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="OutputSpain.operating_unit = 'OU: ResMed EPN - Spain'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.operating_unit = 'OU: ResMed EPN - Spain'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="operating_unit" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.operating_unit">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="OutputSpain.airview_bill_to_account = ''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.airview_bill_to_account = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="airview_bill_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.airview_bill_to_account">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="OutputSpain.messages = ''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.messages = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.messages">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="OutputSpain.upl = ''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.upl = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="upl" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.upl">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="Insert values of columns.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Insert values of columns." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Cross_table">
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//billing_global_output_spain" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_global_output_spain" ruleStatements="#//@ruleset/@ruleStatements.0">
+        <alias value="OutputSpain"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/additional_desc"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/date_of_insertion"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/operating_unit"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/airview_bill_to_account"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/messages"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_spain/upl"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="36" sashWeightConditionsIf="46">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="51">
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.additional_desc = 'AirView Billing ' + now.addMonths(0).month.toString() + cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.additional_desc = 'AirView Billing ' + now.addMonths ( 0 ).month.toString + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="additional_desc" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.additional_desc">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="additional_desc" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.additional_desc">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.date_of_insertion">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.date_of_insertion" datatype="DateTime" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="OutputSpain.date_of_insertion">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.operating_unit">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.operating_unit" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="operating_unit" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.operating_unit">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.airview_bill_to_account">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.airview_bill_to_account" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="airview_bill_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.airview_bill_to_account">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.messages">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.messages" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.messages">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputSpain.upl">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.upl" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="upl" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.upl">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.5"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="0"/>
+        <text external="Insert values of columns.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Insert values of columns." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="592" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="now.addYears(0).year.toString()">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.additional_desc = 'AirView Billing ' + now.addMonths ( 0 ).month.toString + now.addYears ( 0 ).year.toString" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="additional_desc" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.additional_desc">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="now">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.date_of_insertion = now" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="OutputSpain.date_of_insertion">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'OU: ResMed EPN - Spain'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.operating_unit = 'OU: ResMed EPN - Spain'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="operating_unit" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.operating_unit">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.airview_bill_to_account = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="airview_bill_to_account" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.airview_bill_to_account">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.messages = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="messages" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.messages">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="''">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputSpain.upl = ''" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="upl" datatype="String" termtype="ATTRIBUTE" fulltext="OutputSpain.upl">
+                <parentTerm text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="OutputSpain" datatype="billing_global_output_spain" termtype="ENTITY" fulltext="OutputSpain">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

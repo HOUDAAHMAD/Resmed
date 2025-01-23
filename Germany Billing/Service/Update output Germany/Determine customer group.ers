@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_ZOOWMkMeEe213P8vczo9_w" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_z2-vwUMZEe213P8vczo9_w" vocabulary="../../../BillingProcess.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="InputCrossTable.Customer_group = 'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group = 'AIR LIQUIDE'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputCrossTable.Customer_group" rhs="'AIR LIQUIDE'"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="InputCrossTable.Customer_group_branch = 'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'AIR LIQUIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="InputCrossTable.Customer_group = 'VIVISOL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group = 'VIVISOL'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputCrossTable.Customer_group" rhs="'VIVISOL'"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="InputCrossTable.Customer_group_branch = 'VIVISOL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'VIVISOL'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="not (InputCrossTable.Customer_group = 'AIR LIQUIDE' or InputCrossTable.Customer_group = 'VIVISOL') or InputCrossTable.Customer_group = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( InputCrossTable.Customer_group = 'AIR LIQUIDE' or InputCrossTable.Customer_group = 'VIVISOL' ) or InputCrossTable.Customer_group = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputCrossTable.Customer_group" rhs="not {'AIR LIQUIDE', 'VIVISOL'}"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="InputCrossTable.Customer_group_branch = 'OTHERS'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'OTHERS'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1/@actions.0 #//@ruleset/@rules.2/@actions.0 #//@ruleset/@rules.3/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Determine customer group for branch.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Determine customer group for branch." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Cross_table" ruleStatements="#//@ruleset/@ruleStatements.0">
+      <alias value="InputCrossTable"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Customer_group"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Cross_table/Customer_group_branch"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="InputCrossTable.Customer_group_branch">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="193" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="Determine customer group for branch.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Determine customer group for branch." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="InputCrossTable.Customer_group">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20" scrollColumnLeft="1">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="162" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group = 'AIR LIQUIDE'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'AIR LIQUIDE'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'AIR LIQUIDE'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'VIVISOL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group = 'VIVISOL'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'VIVISOL'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'VIVISOL'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="212" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="not {'AIR LIQUIDE', 'VIVISOL'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( InputCrossTable.Customer_group = 'AIR LIQUIDE' or InputCrossTable.Customer_group = 'VIVISOL' ) or InputCrossTable.Customer_group = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'OTHERS'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputCrossTable.Customer_group_branch = 'OTHERS'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="InputCrossTable.Customer_group_branch">
+                <parentTerm text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="InputCrossTable" datatype="Cross_table" termtype="ENTITY" fulltext="InputCrossTable"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

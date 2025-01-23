@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_9oiZcIYBEe2bQf93q89SFw" externalChecksum="2722078124:1438690353:494732188" studioType="Java" rulesheetAssets="../Update%20Output%20Belgium/Remove%20empty%20quantity.ers#/ ../Update%20Output%20Belgium/Determine%20customer%20group.ers#/" ruleflowAssets="../Lines%20billing%20Belgium/Create%20biling%20lines.erf#/ ../Billing%20customers%20general/Billing%20customers%20general.erf#/ ../Billing%20air%20liquide/Billing%20air%20liquide.erf#/ ../Billing%20Linde/Billing%20specific%20customer%20linde.erf#/ ../Billing%20Isis/Billing%20specific%20customer%20Isis.erf#/ ../Billing%20Oxysphair/Billing%20specific%20customer%20oxysphair.erf#/ ../Billing%20vivisol/Billing%20vivisol%20ventil%20expert.erf#/">
+  <comments timestamp="2022-11-29T09:08:58.541+0100" username="msquinta" text="Some Account Numbers should not be charged.&#xD;&#xA;This rule is is based on and take in account the Cross_Table&#xD;&#xA;[Ref. Create Billing Lines : Rule #1 Doc Belgium]" objects="#//@ruleflowViewList.0/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-11-29T09:52:45.156+0100" username="msquinta" text="Billing rules for Belgian Organisations not in the cross_table" objects="#//@ruleflowViewList.0/@flowShapeList.1" type="Note"/>
+  <comments timestamp="2022-11-29T09:21:39.917+0100" username="msquinta" text="Billing rules for each line that is billed to Begian customers" objects="#//@ruleflowViewList.0/@flowShapeList.2" type="Note"/>
+  <comments timestamp="2022-11-29T09:10:50.232+0100" username="msquinta" text="General billing rules that apply to all customers&#xD;&#xA;[Ref. General customer : Rule #2 Doc Belgium]" objects="#//@ruleflowViewList.0/@flowShapeList.3/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-11-29T19:03:33.883+0100" username="msquinta" text="Billing rules for specific Belgian customers&#xD;&#xA;- Air liquide&#xD;&#xA;- Vivisol&#xD;&#xA;- Linde&#xD;&#xA;- Isis&#xD;&#xA;- Oxysphair&#xD;&#xA;- Other..." objects="#//@ruleflowViewList.0/@flowShapeList.4" type="Note"/>
+  <comments timestamp="2022-11-29T09:03:57.934+0100" username="msquinta" text="illing ruels for Air liquide customers&#xD;&#xA;[Ref. Rule #7 Doc Belgium]&#xD;&#xA;- Item is PAYPERVIEW&#xD;&#xA;- Item is AVVENTEADV01" objects="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.0" type="Note"/>
+  <comments timestamp="2022-11-29T09:06:30.439+0100" username="msquinta" text="Billing rules for Linde customers&#xD;&#xA;[Ref. Rule #3 Doc Belgium]" objects="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.1" type="Note"/>
+  <comments timestamp="2022-11-29T09:07:00.670+0100" username="msquinta" text="Billing rules for Isis customers&#xD;&#xA;[Ref. Rule #4 Doc Belgium]" objects="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.2" type="Note"/>
+  <comments timestamp="2022-11-29T09:07:33.417+0100" username="msquinta" text="Billing rules for Oxysphair customers&#xD;&#xA;[Ref. Rule #5 Doc Belgium]" objects="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.3" type="Note"/>
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_87XuAJyVEe2GWKc4soQxyw" vocabulary="../../../BillingProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Create Biling Lines" order="7" ruleActivityUpdateStamp="_n2LmMIp8Ee2n1JxqqzU4bQ" nextStep="#//@ruleflow/@flowControlList.6" invokes="../Lines%20billing%20Belgium/Create%20biling%20lines.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Insert Output Global Belgium" order="19" ruleActivityUpdateStamp="_M1TLdIXqEe2bQf93q89SFw" nextStep="#//@ruleflow/@flowControlList.2" invokes="#//@ruleflow/@connectorList.0"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Insert Details Output Belgium" order="20" ruleActivityUpdateStamp="_M1v3ZIXqEe2bQf93q89SFw" invokes="#//@ruleflow/@connectorList.1"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Specific customers requiring special processing?" order="9" ruleActivityUpdateStamp="_9oiZcIYBEe2bQf93q89SFw" nextStep="#//@ruleflow/@flowControlList.5" invokes="#//@ruleflow/@flowControlList.3">
+      <condition expression="Cross_table.Not_in_general">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Cross_table.Not_in_general" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="Not_in_general" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Cross_table.Not_in_general">
+              <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Customers General" order="10" ruleActivityUpdateStamp="_qLq1QIX6Ee2bQf93q89SFw" invokes="../Billing%20customers%20general/Billing%20customers%20general.erf#//@ruleflow"/>
+        <label expression="false"/>
+        <viewExpressions lhs="Cross_table.Not_in_general" rhs="false"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="11" ruleActivityUpdateStamp="_M_khwIXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.0"/>
+        <label expression="true"/>
+        <viewExpressions lhs="Cross_table.Not_in_general" rhs="true"/>
+      </branches>
+    </flowControlList>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="1" ruleActivityUpdateStamp="_M_4q0YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Remove empty quantity" order="18" ruleActivityUpdateStamp="_mCXaknxXEe2BWfsWFJ5Kbw" nextStep="#//@ruleflow/@flowControlList.1" invokes="../Update%20Output%20Belgium/Remove%20empty%20quantity.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Determine customer group" order="8" ruleActivityUpdateStamp="_JRPuAHr2Ee2Z5tWRdRiMvA" nextStep="#//@ruleflow/@flowControlList.3" invokes="../Update%20Output%20Belgium/Determine%20customer%20group.ers#//@ruleset"/>
+    <subflowList name="Specific customers">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Process billing data for specific customers" order="12" ruleActivityUpdateStamp="_9oiZcIYBEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.0/@flowControlList.0">
+        <condition expression="Cross_table.Customer_group_branch">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Cross_table.Customer_group_branch" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="Customer_group_branch" datatype="String" termtype="ATTRIBUTE" fulltext="Cross_table.Customer_group_branch">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </condition>
+        <branches>
+          <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Linde" order="13" ruleActivityUpdateStamp="_lGJvQIIQEe2hwpkmboLyBw" invokes="../Billing%20Linde/Billing%20specific%20customer%20linde.erf#//@ruleflow"/>
+          <label expression="'LINDE'"/>
+          <viewExpressions lhs="Cross_table.Customer_group_branch" rhs="'LINDE'"/>
+        </branches>
+        <branches>
+          <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Isis" order="14" ruleActivityUpdateStamp="_5MWYYIa5Ee2neobssqIS_w" invokes="../Billing%20Isis/Billing%20specific%20customer%20Isis.erf#//@ruleflow"/>
+          <label expression="'ISIS'"/>
+          <viewExpressions lhs="Cross_table.Customer_group_branch" rhs="'ISIS'"/>
+        </branches>
+        <branches>
+          <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Billing vivisol ventil expert" order="15" ruleActivityUpdateStamp="_uIHIkIXtEe2bQf93q89SFw" invokes="../Billing%20vivisol/Billing%20vivisol%20ventil%20expert.erf#//@ruleflow"/>
+          <label expression="'VIVISOL'"/>
+          <viewExpressions lhs="Cross_table.Customer_group_branch" rhs="'VIVISOL'"/>
+        </branches>
+        <branches>
+          <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Oxysphair" order="16" ruleActivityUpdateStamp="_07CkUIIQEe2hwpkmboLyBw" invokes="../Billing%20Oxysphair/Billing%20specific%20customer%20oxysphair.erf#//@ruleflow"/>
+          <label expression="'OXYSPHAIR'"/>
+          <viewExpressions lhs="Cross_table.Customer_group_branch" rhs="'OXYSPHAIR'"/>
+        </branches>
+        <branches>
+          <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Air liquide" order="17" ruleActivityUpdateStamp="_wfmX0IYCEe2bQf93q89SFw" invokes="../Billing%20air%20liquide/Billing%20air%20liquide.erf#//@ruleflow"/>
+          <label expression="'AIR LIQUIDE'"/>
+          <viewExpressions lhs="Cross_table.Customer_group_branch" rhs="'AIR LIQUIDE'"/>
+        </branches>
+      </flowControlList>
+    </subflowList>
+    <subflowList name="Legenda">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="6" ruleActivityUpdateStamp="_NA9o4YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1/@subflowList.0"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="5" ruleActivityUpdateStamp="_NA9o4YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1/@subflowList.1"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="4" ruleActivityUpdateStamp="_NA9o4YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1/@subflowList.2"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="3" ruleActivityUpdateStamp="_NA9o4YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1/@subflowList.3"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="2" ruleActivityUpdateStamp="_NA9o4YXqEe2bQf93q89SFw" invokes="#//@ruleflow/@subflowList.1/@subflowList.4"/>
+      <subflowList name="Rulesheet"/>
+      <subflowList name="Ruleflow"/>
+      <subflowList name="Branch"/>
+      <subflowList name="Sub-flow"/>
+      <subflowList name="Service call_out"/>
+    </subflowList>
+    <connectorList className="CorticonADC" serviceName="write">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Insert Output Belgium"/>
+    </connectorList>
+    <connectorList className="CorticonADC" serviceName="write">
+      <connectorDecryptedProperties name="Datasource Name" value="ADC"/>
+      <connectorDecryptedProperties name="Query Name" value="Insert Details Output Belgium"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="294" y="12" width="271" height="52" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="288" y="1032" width="277" height="46" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="288" y="1116" width="277" height="44" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" y="198" width="835" height="691" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.3" valid="true" branchContainer="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="16777088"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="25" y="42" width="221" height="63" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.3/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.3/@branches.0/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="337" y="30" width="463" height="607" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.3/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.3/@branches.1/@nextStep.0">
+        <annotations name="Color" value="255"/>
+      </flowShapeList>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.3/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.3/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.3/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.3/@branches.1"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="13" y="14" width="433" height="511" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@subflowList.0/@flowControlList.0">
+      <annotations name="Color" value="16777088"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="24" width="232" height="65" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.4/@branchEdgeList.4" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.4/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="114" width="232" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.4/@branchEdgeList.0" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.0/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="204" width="232" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.4/@branchEdgeList.1" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.1/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="300" width="232" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.4/@branchEdgeList.3" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.3/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="394" width="235" height="67" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.4/@branchEdgeList.2" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.2/@nextStep.0">
+        <annotations name="Color" value="8454016"/>
+      </flowShapeList>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.1" branch="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.2" branch="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.1"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.4" branch="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.2"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.3" branch="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.3"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.4/@flowShapeList.0" branch="#//@ruleflow/@subflowList.0/@flowControlList.0/@branches.4"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="864" y="12" width="319" height="297" activityNode="#//@ruleflow/@flowControlList.4"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="55" y="9" width="184" height="29" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="61" y="60" width="180" height="27" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.1">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="62" y="107" width="180" height="29" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.2">
+      <annotations name="Color" value="16777088"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="62" y="156" width="181" height="29" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.3">
+      <annotations name="Color" value="255"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="62" y="205" width="181" height="31" activityNode="#//@ruleflow/@subflowList.1/@flowControlList.4">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="288" y="936" width="277" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="294" y="102" width="271" height="49" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.6">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.12"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.11"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.11" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.12" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

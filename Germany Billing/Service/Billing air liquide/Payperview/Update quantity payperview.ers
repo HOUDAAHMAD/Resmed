@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_LoxpU0SAEe2swaTBzTI5Gg" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_LGP68WQEEe2A1IbIBqhklw" vocabulary="../../../../BillingProcess.ecore#/">
+    <rule>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="(drop1.Name=OutputGermany.bill_to_customer_name)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( drop1.Name = OutputGermany.bill_to_customer_name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop1.Name">
+                <parentTerm text="drop1" datatype="local_drop1_serial" termtype="ENTITY" fulltext="drop1" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="drop1.Name=OutputGermany.bill_to_customer_name" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(drop2.Name=OutputGermany.bill_to_customer_name)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( drop2.Name = OutputGermany.bill_to_customer_name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop2.Name">
+                <parentTerm text="drop2" datatype="local_drop2_serial" termtype="ENTITY" fulltext="drop2" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="drop2.Name=OutputGermany.bill_to_customer_name" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="OutputGermany.quantity-=(drop1.quantity+drop2.quantity)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputGermany.quantity = OutputGermany.quantity - ( drop1.quantity + drop2.quantity )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputGermany.quantity">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputGermany.quantity">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="drop1.quantity">
+                <parentTerm text="drop1" datatype="local_drop1_serial" termtype="ENTITY" fulltext="drop1" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="drop2.quantity">
+                <parentTerm text="drop2" datatype="local_drop2_serial" termtype="ENTITY" fulltext="drop2" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="OutputGermany.item='PAYPERVIEW'">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputGermany.item = 'PAYPERVIEW'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.item">
+              <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="Update the column quantity in {OutputGermany} with the Payperview item by subtracting the serial number quantity found in Briscoe_drop1_details and Briscoe_drop234_details.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update the column quantity in  + OutputGermany +  with the Payperview item by subtracting the serial number quantity found in Briscoe_drop1_details and Briscoe_drop234_details." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../../BillingProcess.ecore#//billing_global_output_germany" ruleStatements="#//@ruleset/@ruleStatements.0" filters="#//@ruleset/@filters.0">
+      <alias value="OutputGermany"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//billing_global_output_germany/bill_to_customer_name"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//billing_global_output_germany/item"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//billing_global_output_germany/quantity"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../../../BillingProcess.ecore#//local_drop1_serial">
+      <alias value="drop1"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//local_drop1_serial/Name"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//local_drop1_serial/quantity"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../../../BillingProcess.ecore#//local_drop2_serial">
+      <alias value="drop2"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//local_drop2_serial/Name"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//local_drop2_serial/quantity"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="27" sashWeightConditionsIf="56">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="OutputGermany.quantity-=(drop1.quantity+drop2.quantity)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputGermany.quantity = OutputGermany.quantity - ( drop1.quantity + drop2.quantity )" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputGermany.quantity">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputGermany.quantity">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="drop1.quantity">
+                <parentTerm text="drop1" datatype="local_drop1_serial" termtype="ENTITY" fulltext="drop1" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="drop2.quantity">
+                <parentTerm text="drop2" datatype="local_drop2_serial" termtype="ENTITY" fulltext="drop2" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="OutputGermany.item='PAYPERVIEW'" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="OutputGermany.item='PAYPERVIEW'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputGermany.item = 'PAYPERVIEW'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.item">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="146" columnWidthID="50" columnWidthText="734" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList rowHeight="53" ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1"/>
+        <text external="Update the column quantity in {OutputGermany} with the Payperview item by subtracting the serial number quantity found in Briscoe_drop1_details and Briscoe_drop234_details.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Update the column quantity in  + OutputGermany +  with the Payperview item by subtracting the serial number quantity found in Briscoe_drop1_details and Briscoe_drop234_details." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="drop1.Name=OutputGermany.bill_to_customer_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drop1.Name = OutputGermany.bill_to_customer_name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop1.Name">
+                <parentTerm text="drop1" datatype="local_drop1_serial" termtype="ENTITY" fulltext="drop1" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="drop2.Name=OutputGermany.bill_to_customer_name">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="drop2.Name = OutputGermany.bill_to_customer_name" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop2.Name">
+                <parentTerm text="drop2" datatype="local_drop2_serial" termtype="ENTITY" fulltext="drop2" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="334" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( drop1.Name = OutputGermany.bill_to_customer_name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop1.Name">
+                <parentTerm text="drop1" datatype="local_drop1_serial" termtype="ENTITY" fulltext="drop1" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( drop2.Name = OutputGermany.bill_to_customer_name ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Name" datatype="String" termtype="ATTRIBUTE" fulltext="drop2.Name">
+                <parentTerm text="drop2" datatype="local_drop2_serial" termtype="ENTITY" fulltext="drop2" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputGermany.bill_to_customer_name">
+                <parentTerm text="OutputGermany" datatype="billing_global_output_germany" termtype="ENTITY" fulltext="OutputGermany" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_XvobI5JYEe2jwLh3z1pylQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_WwBw4JD7Ee2_tJQGo34b8Q" vocabulary="../../../BillingProcess.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0"/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="InputGeneral.DEVICE_GROUP = 'S11 Sleep' or InputGeneral.DEVICE_GROUP = 'S10 Sleep'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.DEVICE_GROUP = 'S11 Sleep' or InputGeneral.DEVICE_GROUP = 'S10 Sleep'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputGeneral.DEVICE_GROUP" rhs="{'S11 Sleep', 'S10 Sleep'}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="global_output.item = 'AVSLEEPESS01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.item = 'AVSLEEPESS01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.item">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="global_output.item" rhs="'AVSLEEPESS01'"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="global_output.quantity+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.quantity = global_output.quantity + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Billing_details_output_netherlands.new[&#xD;&#xA;PK_from_input_file = InputGeneral.PK,&#xD;&#xA;organization_name = InputGeneral.ORGANIZATION_NAME,&#xD;&#xA;org_id = InputGeneral.ORG_ID,&#xD;&#xA;account_number  = InputGeneral.ACCOUNT_NUMBER,&#xD;&#xA;country_code = InputGeneral.COUNTRY_CODE,&#xD;&#xA;date_of_insertion = now,&#xD;&#xA;device_group = InputGeneral.DEVICE_GROUP,&#xD;&#xA;device_type = InputGeneral.DEVICE_TYPE,&#xD;&#xA;location = InputGeneral.LOCATION,&#xD;&#xA;operation = InputGeneral.OPERATION,&#xD;&#xA;plan_name = InputGeneral.PLAN_NAME,&#xD;&#xA;serial_number = InputGeneral.SERIAL_NUMBER,&#xD;&#xA;assigned_date = InputGeneral.ASSIGNED_DATE,&#xD;&#xA;facturation_line_identification = InputGeneral.ORGANIZATION_NAME+'_'+InputGeneral.DEVICE_GROUP,&#xD;&#xA;bill_to_customer_name = 'VIVISOL NL'&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_details_output_netherlands.new [ Billing_details_output_netherlands.serial_number = InputGeneral.SERIAL_NUMBER , Billing_details_output_netherlands.plan_name = InputGeneral.PLAN_NAME , Billing_details_output_netherlands.organization_name = InputGeneral.ORGANIZATION_NAME , Billing_details_output_netherlands.org_id = InputGeneral.ORG_ID , Billing_details_output_netherlands.operation = InputGeneral.OPERATION , Billing_details_output_netherlands.location = InputGeneral.LOCATION , Billing_details_output_netherlands.facturation_line_identification = InputGeneral.ORGANIZATION_NAME + '_' + InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.device_type = InputGeneral.DEVICE_TYPE , Billing_details_output_netherlands.device_group = InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.date_of_insertion = now , Billing_details_output_netherlands.country_code = InputGeneral.COUNTRY_CODE , Billing_details_output_netherlands.bill_to_customer_name = 'VIVISOL NL' , Billing_details_output_netherlands.assigned_date = InputGeneral.ASSIGNED_DATE , Billing_details_output_netherlands.account_number = InputGeneral.ACCOUNT_NUMBER , Billing_details_output_netherlands.PK_from_input_file = InputGeneral.PK ]" datatype="Billing_details_output_netherlands" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.country_code">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.organization_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.operation">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="org_id" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.org_id">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.bill_to_customer_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_group" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_group">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="assigned_date" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.assigned_date">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_type">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.facturation_line_identification">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.PK_from_input_file">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.serial_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="account_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.account_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.date_of_insertion">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.location">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.plan_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="Billing_details_output_netherlands" termtype="NEW" fulltext="Billing_details_output_netherlands.new">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="ORG_ID" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.ORG_ID">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.PK">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PLAN_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.PLAN_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ASSIGNED_DATE" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputGeneral.ASSIGNED_DATE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="OPERATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.OPERATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="SERIAL_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.SERIAL_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_TYPE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_TYPE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="COUNTRY_CODE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.COUNTRY_CODE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="LOCATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.LOCATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ACCOUNT_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ACCOUNT_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="InputGeneral.DEVICE_GROUP = 'VNI'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.DEVICE_GROUP = 'VNI'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="InputGeneral.DEVICE_GROUP" rhs="'VNI'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="global_output.item = 'AVVENTADV01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.item = 'AVVENTADV01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.item">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="global_output.item" rhs="'AVVENTADV01'"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="global_output.quantity+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.quantity = global_output.quantity + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Billing_details_output_netherlands.new[&#xD;&#xA;PK_from_input_file = InputGeneral.PK,&#xD;&#xA;organization_name = InputGeneral.ORGANIZATION_NAME,&#xD;&#xA;org_id = InputGeneral.ORG_ID,&#xD;&#xA;account_number  = InputGeneral.ACCOUNT_NUMBER,&#xD;&#xA;country_code = InputGeneral.COUNTRY_CODE,&#xD;&#xA;date_of_insertion = now,&#xD;&#xA;device_group = InputGeneral.DEVICE_GROUP,&#xD;&#xA;device_type = InputGeneral.DEVICE_TYPE,&#xD;&#xA;location = InputGeneral.LOCATION,&#xD;&#xA;operation = InputGeneral.OPERATION,&#xD;&#xA;plan_name = InputGeneral.PLAN_NAME,&#xD;&#xA;serial_number = InputGeneral.SERIAL_NUMBER,&#xD;&#xA;assigned_date = InputGeneral.ASSIGNED_DATE,&#xD;&#xA;facturation_line_identification = InputGeneral.ORGANIZATION_NAME+'_'+InputGeneral.DEVICE_GROUP,&#xD;&#xA;bill_to_customer_name = 'VIVISOL NL'&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_details_output_netherlands.new [ Billing_details_output_netherlands.serial_number = InputGeneral.SERIAL_NUMBER , Billing_details_output_netherlands.plan_name = InputGeneral.PLAN_NAME , Billing_details_output_netherlands.organization_name = InputGeneral.ORGANIZATION_NAME , Billing_details_output_netherlands.org_id = InputGeneral.ORG_ID , Billing_details_output_netherlands.operation = InputGeneral.OPERATION , Billing_details_output_netherlands.location = InputGeneral.LOCATION , Billing_details_output_netherlands.facturation_line_identification = InputGeneral.ORGANIZATION_NAME + '_' + InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.device_type = InputGeneral.DEVICE_TYPE , Billing_details_output_netherlands.device_group = InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.date_of_insertion = now , Billing_details_output_netherlands.country_code = InputGeneral.COUNTRY_CODE , Billing_details_output_netherlands.bill_to_customer_name = 'VIVISOL NL' , Billing_details_output_netherlands.assigned_date = InputGeneral.ASSIGNED_DATE , Billing_details_output_netherlands.account_number = InputGeneral.ACCOUNT_NUMBER , Billing_details_output_netherlands.PK_from_input_file = InputGeneral.PK ]" datatype="Billing_details_output_netherlands" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.country_code">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.organization_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.operation">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="org_id" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.org_id">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.bill_to_customer_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_group" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_group">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="assigned_date" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.assigned_date">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_type">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.facturation_line_identification">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.PK_from_input_file">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.serial_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="account_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.account_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.date_of_insertion">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.location">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.plan_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="Billing_details_output_netherlands" termtype="NEW" fulltext="Billing_details_output_netherlands.new">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="ORG_ID" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.ORG_ID">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.PK">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PLAN_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.PLAN_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ASSIGNED_DATE" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputGeneral.ASSIGNED_DATE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="OPERATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.OPERATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="SERIAL_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.SERIAL_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_TYPE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_TYPE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="COUNTRY_CODE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.COUNTRY_CODE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="LOCATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.LOCATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ACCOUNT_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ACCOUNT_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="InputGeneral.ASSIGNED_DATE.year>=2021">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.ASSIGNED_DATE.year >= 2021" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="year" datatype="Integer" termtype="METHOD" fulltext="InputGeneral.ASSIGNED_DATE.year">
+              <parentTerm text="ASSIGNED_DATE" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputGeneral.ASSIGNED_DATE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0 #//@ruleset/@rules.1/@actions.0 #//@ruleset/@rules.2/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.0">
+      <text expression="Sum of rows for custumers in group VIVISOL, by device group.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Sum of rows for custumers in group VIVISOL, by device group." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info">
+      <text expression="Creation of billing details lines for customers under the customer group VIVISOL.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Creation of billing details lines for customers under the customer group VIVISOL." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Billing_General" filters="#//@ruleset/@filters.0">
+      <alias value="InputGeneral"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/DEVICE_GROUP"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/ASSIGNED_DATE"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/ORGANIZATION_NAME"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/ORG_ID"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/PK"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/PLAN_NAME"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/OPERATION"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/SERIAL_NUMBER"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/DEVICE_TYPE"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/COUNTRY_CODE"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/LOCATION"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/ACCOUNT_NUMBER"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/DATE_OF_TREATMENT"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Billing_details_output_netherlands">
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/country_code"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/organization_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/operation"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/org_id"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/bill_to_customer_name"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/device_group"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/assigned_date"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/device_type"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/facturation_line_identification"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/PK_from_input_file"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/serial_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/account_number"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/date_of_insertion"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/location"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_details_output_netherlands/plan_name"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Cross_table">
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//billing_global_output_netherlands" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_global_output_netherlands" ruleStatements="#//@ruleset/@ruleStatements.0">
+        <alias value="global_output"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_netherlands/bill_to_customer_name"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_netherlands/item"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_netherlands/quantity"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//Billing_details_output_netherlands" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_details_output_netherlands">
+        <alias value="details_output"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="26" sashWeightConditionsActions="55" sashWeightConditionsIf="45">
+    <actionSection rowCount="48" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="global_output.quantity+=1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.quantity = global_output.quantity + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="global_output.quantity">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="51">
+        <valueSetCell/>
+        <expressionCell external="Billing_details_output_netherlands.new[&#xD;&#xA;PK_from_input_file = InputGeneral.PK,&#xD;&#xA;organization_name = InputGeneral.ORGANIZATION_NAME,&#xD;&#xA;org_id = InputGeneral.ORG_ID,&#xD;&#xA;account_number  = InputGeneral.ACCOUNT_NUMBER,&#xD;&#xA;country_code = InputGeneral.COUNTRY_CODE,&#xD;&#xA;date_of_insertion = now,&#xD;&#xA;device_group = InputGeneral.DEVICE_GROUP,&#xD;&#xA;device_type = InputGeneral.DEVICE_TYPE,&#xD;&#xA;location = InputGeneral.LOCATION,&#xD;&#xA;operation = InputGeneral.OPERATION,&#xD;&#xA;plan_name = InputGeneral.PLAN_NAME,&#xD;&#xA;serial_number = InputGeneral.SERIAL_NUMBER,&#xD;&#xA;assigned_date = InputGeneral.ASSIGNED_DATE,&#xD;&#xA;facturation_line_identification = InputGeneral.ORGANIZATION_NAME+'_'+InputGeneral.DEVICE_GROUP,&#xD;&#xA;bill_to_customer_name = 'VIVISOL NL'&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_details_output_netherlands.new [ Billing_details_output_netherlands.serial_number = InputGeneral.SERIAL_NUMBER , Billing_details_output_netherlands.plan_name = InputGeneral.PLAN_NAME , Billing_details_output_netherlands.organization_name = InputGeneral.ORGANIZATION_NAME , Billing_details_output_netherlands.org_id = InputGeneral.ORG_ID , Billing_details_output_netherlands.operation = InputGeneral.OPERATION , Billing_details_output_netherlands.location = InputGeneral.LOCATION , Billing_details_output_netherlands.facturation_line_identification = InputGeneral.ORGANIZATION_NAME + '_' + InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.device_type = InputGeneral.DEVICE_TYPE , Billing_details_output_netherlands.device_group = InputGeneral.DEVICE_GROUP , Billing_details_output_netherlands.date_of_insertion = now , Billing_details_output_netherlands.country_code = InputGeneral.COUNTRY_CODE , Billing_details_output_netherlands.bill_to_customer_name = 'VIVISOL NL' , Billing_details_output_netherlands.assigned_date = InputGeneral.ASSIGNED_DATE , Billing_details_output_netherlands.account_number = InputGeneral.ACCOUNT_NUMBER , Billing_details_output_netherlands.PK_from_input_file = InputGeneral.PK ]" datatype="Billing_details_output_netherlands" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.country_code">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="organization_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.organization_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.operation">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="org_id" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.org_id">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.bill_to_customer_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_group" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_group">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="assigned_date" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.assigned_date">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.device_type">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="facturation_line_identification" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.facturation_line_identification">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="PK_from_input_file" datatype="Integer" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.PK_from_input_file">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="serial_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.serial_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="account_number" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.account_number">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="date_of_insertion" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.date_of_insertion">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="location" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.location">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="plan_name" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_details_output_netherlands.plan_name">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="new" datatype="Billing_details_output_netherlands" termtype="NEW" fulltext="Billing_details_output_netherlands.new">
+                <parentTerm text="Billing_details_output_netherlands" datatype="Billing_details_output_netherlands" termtype="ENTITY" fulltext="Billing_details_output_netherlands" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="ORG_ID" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.ORG_ID">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PK" datatype="Integer" termtype="ATTRIBUTE" fulltext="InputGeneral.PK">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="PLAN_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.PLAN_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ASSIGNED_DATE" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputGeneral.ASSIGNED_DATE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="OPERATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.OPERATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="SERIAL_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.SERIAL_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="DEVICE_TYPE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_TYPE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="COUNTRY_CODE" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.COUNTRY_CODE">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="LOCATION" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.LOCATION">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="ACCOUNT_NUMBER" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ACCOUNT_NUMBER">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="InputGeneral.ASSIGNED_DATE.year>=2021" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.11"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.12"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.4"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.6"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.7"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.8"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.9"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.10"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.11"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.12"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.13"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.14"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@extension.0/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.2/@extension.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="47">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="InputGeneral.ASSIGNED_DATE.year>=2021">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.ASSIGNED_DATE.year >= 2021" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="InputGeneral.ASSIGNED_DATE.year">
+                <parentTerm text="ASSIGNED_DATE" datatype="DateTime" termtype="ATTRIBUTE" fulltext="InputGeneral.ASSIGNED_DATE">
+                  <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="326" columnWidthID="50" columnWidthText="689" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="Sum of rows for custumers in group VIVISOL, by device group.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Sum of rows for custumers in group VIVISOL, by device group." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference/>
+        <text external="Creation of billing details lines for customers under the customer group VIVISOL.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Creation of billing details lines for customers under the customer group VIVISOL." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="46" columnWidthFactor="0.8172413793103448">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="InputGeneral.DEVICE_GROUP">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.DEVICE_GROUP" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="global_output.item">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.item" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.item">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="173" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="{'S11 Sleep', 'S10 Sleep'}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.DEVICE_GROUP = 'S11 Sleep' or InputGeneral.DEVICE_GROUP = 'S10 Sleep'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'AVSLEEPESS01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.item = 'AVSLEEPESS01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.item">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="119" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'VNI'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="InputGeneral.DEVICE_GROUP = 'VNI'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="DEVICE_GROUP" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.DEVICE_GROUP">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'AVVENTADV01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="global_output.item = 'AVVENTADV01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="global_output.item">
+                <parentTerm text="global_output" datatype="billing_global_output_netherlands" termtype="ENTITY" fulltext="global_output" variable="#//@ruleset/@logicalVariables.2/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.2"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_gPOdMIt_Ee2NpNuaSXn0Rg" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_KEEPIItqEe2NpNuaSXn0Rg" vocabulary="../../../BillingProcess.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="OutputItaly.item = 'AVVENTEXP01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.item = 'AVVENTEXP01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.item">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputItaly.item" rhs="'AVVENTEXP01'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(OutputItaly.bill_to_customer_name=InputGeneral.ORGANIZATION_NAME)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputItaly.bill_to_customer_name = InputGeneral.ORGANIZATION_NAME ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputItaly.bill_to_customer_name=InputGeneral.ORGANIZATION_NAME" rhs="T"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="local_service_exp.newUnique[&#xD;&#xA;nexpert=OutputItaly.quantity, &#xD;&#xA;org_name=OutputItaly.bill_to_customer_name&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="local_service_exp.newUnique [ local_service_exp.org_name = OutputItaly.bill_to_customer_name , local_service_exp.nexpert = OutputItaly.quantity ]" datatype="local_service_exp" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nexpert" datatype="Integer" termtype="ATTRIBUTE" fulltext="local_service_exp.nexpert">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="org_name" datatype="String" termtype="ATTRIBUTE" fulltext="local_service_exp.org_name">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputItaly.quantity">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="local_service_exp" termtype="NEW" fulltext="local_service_exp.new">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="OutputItaly.item = 'AVVENTADV01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.item = 'AVVENTADV01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.item">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputItaly.item" rhs="'AVVENTADV01'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(OutputItaly.bill_to_customer_name=InputGeneral.ORGANIZATION_NAME)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputItaly.bill_to_customer_name = InputGeneral.ORGANIZATION_NAME ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="OutputItaly.bill_to_customer_name=InputGeneral.ORGANIZATION_NAME" rhs="T"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="local_service_vent.newUnique[&#xD;&#xA;nvent=OutputItaly.quantity, &#xD;&#xA;org_name=OutputItaly.bill_to_customer_name&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="local_service_vent.newUnique [ local_service_vent.org_name = OutputItaly.bill_to_customer_name , local_service_vent.nvent = OutputItaly.quantity ]" datatype="local_service_vent" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="nvent" datatype="Integer" termtype="ATTRIBUTE" fulltext="local_service_vent.nvent">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="org_name" datatype="String" termtype="ATTRIBUTE" fulltext="local_service_vent.org_name">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputItaly.quantity">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="local_service_vent" termtype="NEW" fulltext="local_service_vent.new">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1/@actions.0 #//@ruleset/@rules.2/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.1">
+      <text expression="Customers in the VIVISOL group, put the expert quantity in local.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Customers in the VIVISOL group, put the expert quantity in local." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.2">
+      <text expression="Customers in the VIVISOL group, put the ventil quantity in local.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Customers in the VIVISOL group, put the ventil quantity in local." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable explicit="true" entity="../../../BillingProcess.ecore#//Billing_General">
+      <alias value="InputGeneral"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/ORGANIZATION_NAME"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/COUNTRY_CODE"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//Billing_General/DATE_OF_INSERTION"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//local_service_exp" ruleStatements="#//@ruleset/@ruleStatements.0">
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//local_service_exp/nexpert"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//local_service_exp/org_name"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//local_service_vent" ruleStatements="#//@ruleset/@ruleStatements.1">
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//local_service_vent/nvent"/>
+      <referencedAttributes attribute="../../../BillingProcess.ecore#//local_service_vent/org_name"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../BillingProcess.ecore#//Cross_table">
+      <extension explicit="true" association="true" entity="../../../BillingProcess.ecore#//billing_global_output_italy" traversedAssocRole="../../../BillingProcess.ecore#//Cross_table/billing_global_output_italy">
+        <alias value="OutputItaly"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_italy/quantity"/>
+        <referencedAttributes attribute="../../../BillingProcess.ecore#//billing_global_output_italy/bill_to_customer_name"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="28" sashWeightConditionsIf="63">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList rowHeight="91">
+        <valueSetCell/>
+        <expressionCell external="local_service_exp.newUnique[&#xD;&#xA;nexpert=OutputItaly.quantity, &#xD;&#xA;org_name=OutputItaly.bill_to_customer_name&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="local_service_exp.newUnique [ local_service_exp.org_name = OutputItaly.bill_to_customer_name , local_service_exp.nexpert = OutputItaly.quantity ]" datatype="local_service_exp" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="nexpert" datatype="Integer" termtype="ATTRIBUTE" fulltext="local_service_exp.nexpert">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="org_name" datatype="String" termtype="ATTRIBUTE" fulltext="local_service_exp.org_name">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputItaly.quantity">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="local_service_exp" termtype="NEW" fulltext="local_service_exp.new">
+                <parentTerm text="local_service_exp" datatype="local_service_exp" termtype="ENTITY" fulltext="local_service_exp" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="91">
+        <valueSetCell/>
+        <expressionCell external="local_service_vent.newUnique[&#xD;&#xA;nvent=OutputItaly.quantity, &#xD;&#xA;org_name=OutputItaly.bill_to_customer_name&#xD;&#xA;]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="local_service_vent.newUnique [ local_service_vent.org_name = OutputItaly.bill_to_customer_name , local_service_vent.nvent = OutputItaly.quantity ]" datatype="local_service_vent" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="nvent" datatype="Integer" termtype="ATTRIBUTE" fulltext="local_service_vent.nvent">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="org_name" datatype="String" termtype="ATTRIBUTE" fulltext="local_service_vent.org_name">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="quantity" datatype="Integer" termtype="ATTRIBUTE" fulltext="OutputItaly.quantity">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+              <terms text="new" datatype="local_service_vent" termtype="NEW" fulltext="local_service_vent.new">
+                <parentTerm text="local_service_vent" datatype="local_service_vent" termtype="ENTITY" fulltext="local_service_vent" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.3">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.3/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.3/@extension.0/@referencedAttributes.1"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="189" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="Customers in the VIVISOL group, put the expert quantity in local.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Customers in the VIVISOL group, put the expert quantity in local." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B"/>
+        <text external="Customers in the VIVISOL group, put the ventil quantity in local.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Customers in the VIVISOL group, put the ventil quantity in local." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="49" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputItaly.item">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.item" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.item">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="OutputItaly.bill_to_customer_name=InputGeneral.ORGANIZATION_NAME">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.bill_to_customer_name = InputGeneral.ORGANIZATION_NAME" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="18">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="156" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'AVVENTEXP01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.item = 'AVVENTEXP01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.item">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputItaly.bill_to_customer_name = InputGeneral.ORGANIZATION_NAME ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="173" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'AVVENTADV01'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="OutputItaly.item = 'AVVENTADV01'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="item" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.item">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( OutputItaly.bill_to_customer_name = InputGeneral.ORGANIZATION_NAME ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="ORGANIZATION_NAME" datatype="String" termtype="ATTRIBUTE" fulltext="InputGeneral.ORGANIZATION_NAME">
+                <parentTerm text="InputGeneral" datatype="Billing_General" termtype="ENTITY" fulltext="InputGeneral" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="bill_to_customer_name" datatype="String" termtype="ATTRIBUTE" fulltext="OutputItaly.bill_to_customer_name">
+                <parentTerm text="OutputItaly" datatype="billing_global_output_italy" termtype="ENTITY" fulltext="OutputItaly" variable="#//@ruleset/@logicalVariables.3/@extension.0">
+                  <parentTerm text="Cross_table" datatype="Cross_table" termtype="ENTITY" fulltext="Cross_table" variable="#//@ruleset/@logicalVariables.3"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
