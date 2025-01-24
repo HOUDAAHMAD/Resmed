@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_UP3KMto7Ee-YAf8UHMWwXQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_iSFu0to7Ee-YAf8UHMWwXQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
   <languageCode>fr_FR</languageCode>
   <ruleset vocabularyUpdateStamp="_87XuAJyVEe2GWKc4soQxyw" vocabulary="../../../../BillingProcess.ecore#/">
     <rule/>
@@ -32,10 +32,25 @@
           </parserOutput>
         </opaqueExpression>
       </action>
+      <action>
+        <opaqueExpression expression="Billing_air_liquide.device_type = 'S10 Sleep'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.device_type = 'S10 Sleep'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.device_type">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
     </rule>
     <logicalVariable entity="../../../../BillingProcess.ecore#//Billing_air_liquide">
       <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/DATE_OF_INSERTION"/>
       <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/operation"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/device_type"/>
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
@@ -52,12 +67,25 @@
           </parserOutput>
         </expressionCell>
       </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Billing_air_liquide.device_type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.device_type" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.device_type">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
     </actionSection>
     <scopeSection>
       <rootNode>
         <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
         </children>
       </rootNode>
     </scopeSection>
@@ -97,6 +125,18 @@
           <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.operation = 'Mai'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
             <modifiedTermList>
               <terms text="operation" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.operation">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'S10 Sleep'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.device_type = 'S10 Sleep'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="device_type" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.device_type">
                 <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide"/>
               </terms>
             </modifiedTermList>
