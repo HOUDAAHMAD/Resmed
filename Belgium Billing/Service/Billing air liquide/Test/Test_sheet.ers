@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_SpSYgdo8Ee-YAf8UHMWwXQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="3" buildNumber="8020" updateStamp="_PmGe4to9Ee-YAf8UHMWwXQ" externalChecksum="2722078124:1438690353:494732188" studioType="Java">
   <languageCode>fr_FR</languageCode>
   <ruleset vocabularyUpdateStamp="_87XuAJyVEe2GWKc4soQxyw" vocabulary="../../../../BillingProcess.ecore#/">
     <rule/>
@@ -17,6 +17,18 @@
           </parserOutput>
         </opaqueExpression>
         <viewExpressions lhs="Billing_air_liquide.DATE_OF_INSERTION.month" rhs="5"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="Billing_air_liquide.country_code = 'fr'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.country_code = 'fr'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.country_code">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Billing_air_liquide.country_code" rhs="'fr'"/>
       </condition>
       <action>
         <opaqueExpression expression="Billing_air_liquide.operation = 'Mai'">
@@ -66,6 +78,7 @@
       <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/operation"/>
       <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/device_type"/>
       <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/datetime"/>
+      <referencedAttributes attribute="../../../../BillingProcess.ecore#//Billing_air_liquide/country_code"/>
     </logicalVariable>
   </ruleset>
   <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
@@ -114,6 +127,7 @@
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
           <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.3"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.4"/>
         </children>
       </rootNode>
     </scopeSection>
@@ -134,6 +148,18 @@
           </parserOutput>
         </expressionCell>
       </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Billing_air_liquide.country_code">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.country_code" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.country_code">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
     </conditionSection>
     <ruleSection columnCount="20">
       <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
@@ -148,6 +174,15 @@
                 <parentTerm text="DATE_OF_INSERTION" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.DATE_OF_INSERTION">
                   <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
                 </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'fr'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Billing_air_liquide.country_code = 'fr'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="country_code" datatype="String" termtype="ATTRIBUTE" fulltext="Billing_air_liquide.country_code">
+                <parentTerm text="Billing_air_liquide" datatype="Billing_air_liquide" termtype="ENTITY" fulltext="Billing_air_liquide" variable="#//@ruleset/@logicalVariables.0"/>
               </terms>
             </referencedTermList>
           </parserOutput>
